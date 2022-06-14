@@ -16,23 +16,23 @@ app.get('/get', (req, res) => getFun({req, res, dbData}));
 
 
 //View Loaned members / members
-app.get('/get/:year/members', Middleware, (req, res) => getMembers({req, res, dbData, dbMembers}));
+app.get('/get/:year/members', (req, res) => getMembers({req, res, dbData, dbMembers}));
 
 
 // Creat 
-app.post('/add', Middleware, (req, res) => create({req, res, dbData}));
+app.post('/add', (req, res) => create({req, res, dbData}));
 
 
 //Update 
-app.put('/update/:year', Middleware, (req, res) => updateYear(req, res, dbData));
+app.put('/update/:year', (req, res) => updateYear(req, res, dbData));
 
 
 //Delete
-app.put('/delete', Middleware, (req, res) => deleteLoans({req, res, dbData}));
+app.put('/delete', (req, res) => deleteLoans({req, res, dbData}));
 
 
 // Update Running loan
-app.put('/update_loans', Middleware , (req, res) => updateLoans({req, res, dbData}));
+app.put('/update_loans', (req, res) => updateLoans({req, res, dbData}));
 
 
 //Login 
